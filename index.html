@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEON RACER | Arcade Racing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="game-container">
+
+        <header class="top-bar">
+            <div class="logo">
+                <span class="logo-icon">◆</span>
+                NEON<span>RACER</span>
+            </div>
+            <div class="status">
+                <span class="status-dot"></span>
+                ARCADE MODE
+            </div>
+        </header>
+
+        <section class="game-layout">
+
+            <aside class="side-panel">
+                <p class="eyebrow">YOUR PERFORMANCE</p>
+
+                <div class="stat-card">
+                    <span>DISTANCE</span>
+                    <strong id="distance">0 <small>m</small></strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>YOUR SCORE</span>
+                    <strong id="score">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>BEST SCORE</span>
+                    <strong id="bestScore">0</strong>
+                </div>
+
+                <div class="nitro-card">
+                    <div class="nitro-heading">
+                        <span>NITRO BOOST</span>
+                        <span id="nitroPercent">100%</span>
+                    </div>
+                    <div class="nitro-track">
+                        <div id="nitroFill"></div>
+                    </div>
+                    <p>Hold SPACE to activate</p>
+                </div>
+
+                <div class="controls">
+                    <p class="eyebrow">CONTROLS</p>
+                    <p><kbd>←</kbd> <kbd>→</kbd> Steer</p>
+                    <p><kbd>W</kbd> / <kbd>↑</kbd> Accelerate</p>
+                    <p><kbd>SPACE</kbd> Nitro</p>
+                    <p><kbd>ESC</kbd> Pause</p>
+                </div>
+            </aside>
+
+            <section class="track-wrapper">
+
+                <div class="track-top">
+                    <span>TRACK 01</span>
+                    <span id="gameStatus">READY TO RACE</span>
+                </div>
+
+                <div class="canvas-container">
+                    <canvas id="gameCanvas" width="500" height="750"></canvas>
+
+                    <div class="overlay" id="startScreen">
+                        <div class="overlay-content">
+                            <div class="small-tag">THE RACE STARTS HERE</div>
+                            <h1>NEON<br><span>RACER</span></h1>
+                            <p>Race through traffic. Beat your record.</p>
+                            <button id="startButton">START RACING <span>→</span></button>
+                            <div class="overlay-hint">USE ARROW KEYS OR WASD</div>
+                        </div>
+                    </div>
+
+                    <div class="overlay hidden" id="pauseScreen">
+                        <div class="overlay-content">
+                            <div class="small-tag">TAKE A BREATHER</div>
+                            <h1>GAME<br><span>PAUSED</span></h1>
+                            <button id="resumeButton">RESUME RACE →</button>
+                        </div>
+                    </div>
+
+                    <div class="overlay hidden" id="gameOverScreen">
+                        <div class="overlay-content">
+                            <div class="small-tag">RACE FINISHED</div>
+                            <h1>GAME<br><span>OVER</span></h1>
+                            <p>Your score: <strong id="finalScore">0</strong></p>
+                            <button id="restartButton">RACE AGAIN →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="track-bottom">
+                    <span>NEON CITY CIRCUIT</span>
+                    <span>BUILT FOR SPEED</span>
+                </div>
+
+            </section>
+
+            <aside class="side-panel right-panel">
+                <p class="eyebrow">LIVE TELEMETRY</p>
+
+                <div class="speed-card">
+                    <span>VELOCITY</span>
+                    <div class="speed-number">
+                        <strong id="speed">0</strong>
+                        <small>KM/H</small>
+                    </div>
+                    <div class="speed-track">
+                        <div id="speedFill"></div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <span>TRAFFIC PASSED</span>
+                    <strong id="carsPassed">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>LEVEL</span>
+                    <strong id="level">01</strong>
+                </div>
+
+                <button class="secondary-button" id="pauseButton">Ⅱ &nbsp; PAUSE GAME</button>
+
+                <div class="tip-card">
+                    <span>DRIVER TIP</span>
+                    <p>Watch the road ahead. Avoid traffic and save your nitro for straight sections!</p>
+                </div>
+            </aside>
+
+        </section>
+
+        <footer>
+            <span>NEON RACER © 2026</span>
+            <span>ARCADE RACING EXPERIENCE</span>
+        </footer>
+
+    </main>
+
+    <script src="game.js"></script>
+</body>
+</html>
